@@ -1,0 +1,131 @@
+html
+{
+	font-family: 'arial','sans-serif';
+	font-size: 14px;
+}
+
+body
+{
+	background-color: #fafaec;
+	color: #000000;
+}
+
+.errmsg
+{
+	color: #ff6666;
+}
+
+.al
+{
+	text-align: left;
+}
+
+.ac
+{
+	text-align: center;
+}
+
+.ar
+{
+	text-align: right;
+}
+
+.b
+{
+	font-weight: bold;
+}
+
+.clickable
+{
+	cursor: pointer;
+}
+
+span
+{
+	display: inline-block;
+}
+
+span.label
+{
+	width: 6em;
+}
+
+span.button
+{
+	background-color: #a0a0a0;
+	border-radius: 4px 4px 4px;
+	color: #f0f0f0;
+	margin: 0.1em;
+	padding: 0.5em 1em;
+}
+
+span.button:hover
+{
+	background-color: #fafa99;
+	box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+	color: #666699;
+}
+
+#FoldersList div.fnode
+{
+	border-radius: 3px 3px 3px;
+	margin: 0.25em 0;
+	padding: 0.5em;
+}
+
+#FoldersList div.fnode:hover
+{
+	background-color: #99cc99;
+}
+
+#FoldersList div.chosen
+{
+	background-color: #c0c0da !important;
+}
+
+#FoldersList div.fnode a[type="dir"]:before
+{
+	content: "";
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin: 0 5px 0 0;
+	background: url("{% url 'wfman:image' 'ui-icons_222222_256x240.png' %}");
+	background-position: 0 -96px;
+}
+
+#FoldersListbox
+{
+	border-color: #828282;
+	border-style: solid;
+	border-width: 3px;
+	margin: 0.5em;
+	padding: 1em;
+}
+
+#FormLogin
+{
+	background-color: #aaeeaa;
+	border-color: #cc9900;
+	border-radius: 8px 8px 8px;
+	border-style: solid;
+	border-width: 2px;
+	margin: 0 auto;
+	padding: 2em;
+	width: 20em;
+}
+
+#FormLogin form > div
+{
+	margin: 0.5em;
+}
+
+#FormLogin form > div:last-child
+{
+	margin: 0 auto;
+}
+
+#shadowbox_container iframe
+{
+	padding: 0;
+}

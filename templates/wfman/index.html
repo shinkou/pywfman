@@ -1,0 +1,36 @@
+{% extends "wfman/layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% url 'wfman:css' 'shadowbox.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% url 'wfman:css' 'index.css' %}"/>
+<script src="{% url 'wfman:js' 'shadowbox/shadowbox.js' %}"></script>
+<script src="{% url 'wfman:js' 'index.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+{% csrf_token %}
+<div class="ar"><span class="ac b label">{{ user.get_full_name }}</span><span class="button b clickable" onclick="location='{% url 'wfman:logout' %}';">Log Out</span></div>
+<div id="FoldersDialog"></div>
+<div id="FoldersProgressbarDialog">
+	<div id="FoldersProgressbar"></div>
+</div>
+<div id="FoldersList"></div>
+<div id="FoldersNewdirForm" title="Create new folder">
+	<p class="errmsg"></p>
+	<form>
+		<fieldset>
+			<label for="fname"><span class="label">Folder name</span></label>
+			<input type="text" name="fname" value=""/>
+		</fieldset>
+	</form>
+</div>
+<div id="FoldersUploadForm" title="Upload file">
+	<p class="errmsg"></p>
+	<form id="TheUploadForm" enctype="multipart/form-data" method="POST">
+		<fieldset>
+			<label for="fname"><span class="label">File</span></label>
+			<input type="File" name="file" value=""/>
+		</fieldset>
+	</form>
+</div>
+{% endblock %}

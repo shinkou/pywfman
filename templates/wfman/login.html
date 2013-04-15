@@ -1,0 +1,17 @@
+{% extends "wfman/layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% url 'wfman:css' 'index.css' %}"/>
+{% endblock %}
+
+{% block body %}
+<div id="FormLogin">
+	<form method="POST" action="{% url 'wfman:login' %}">
+		{% csrf_token %}
+		<div><span class="ac b label">Username</span><span><input type="text" name="username" value="{{ username }}"/></span></div>
+		<div><span class="ac b label">Password</span><span><input type="password" name="password" value="{{ password }}"/></span></div>
+		<div class="ac"><input type="submit" value="login"/></div>
+		{% if errmsg %}<div class="ac b errmsg">{{ errmsg }}</div>{% endif %}
+	</form>
+</div>
+{% endblock %}

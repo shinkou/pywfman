@@ -1,0 +1,26 @@
+<span id="BtnNew" class="button b clickable">New</span>
+<span id="BtnUpload" class="button b clickable">Upload</span>
+<span id="BtnCopy" class="button b clickable">Copy</span>
+<span id="BtnCut" class="button b clickable">Cut</span>
+<span id="BtnDelete" class="button b clickable">Delete</span>
+<span id="BtnPaste" class="button b clickable">Paste</span>
+
+<h2 id="CurrentPath" class="clickable" value="{{ current.getPath }}" title="Click to refresh">{{ current.getPath }}</h2>
+
+{% if not current.isRoot %}<a class="listnav" href="javascript:void(0);" value="{{ current.getParent }}">Go up</a>{% endif %}
+
+<div id="FoldersListbox">
+{% if fblist %}
+	{% for item in fblist %}
+	<div class="fnode clickable" value="{{ item.getPath }}">
+		{% if item.isDir %}
+		<a href="javascript:void(0);" type="dir" value="{{ item.getPath }}">{{ item.getName }}</a>
+		{% else %}
+		<a href="javascript:void(0);" type="file" value="{% url 'wfman:view' item.getPath %}">{{ item.getName }}</a>
+		{% endif %}
+	</div>
+	{% endfor %}
+{% else %}<div>empty</div>{% endif %}
+</div>
+
+{% if not current.isRoot %}<a class="listnav" href="javascript:void(0);" value="{{ current.getParent }}">Go up</a>{% endif %}
